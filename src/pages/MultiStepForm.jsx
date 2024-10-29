@@ -1,14 +1,18 @@
 import useForm from "../hooks/use-Forms";
-import { StepOne } from "./StepOne";
-import { StepTwo } from "./StepTwo";
-import { StepThree } from "./StepThree";
+import StepOne from "../components/StepOne";
+import StepTwo from "../components/StepTwo";
+import StepThree from "../components/StepThree";
 
 const MultiStepForm = () => {
-  const { step, formData, saveData, nextStep, prevStep, resetForm } = useForm();
+  const { step, formData, saveData, nextStep, prevStep, setFormData } =
+    useForm();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    saveData({ [name]: value });
+    const newData = { [name]: value };
+    setFormData({ ...formData, [name]: value });
+    saveData(newData);
+    console.log(formData);
   };
 
   const handleSubmit = (e) => {
@@ -17,7 +21,7 @@ const MultiStepForm = () => {
       nextStep();
     } else {
       console.log("Form submitted:", formData);
-      resetForm();
+      window.location.href = "/form-info";
     }
   };
 
@@ -47,4 +51,4 @@ const MultiStepForm = () => {
   );
 };
 
-export { MultiStepForm };
+export default MultiStepForm;

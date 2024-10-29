@@ -28,4 +28,4 @@ const StepOne = ({ formData, handleChange }) => {
   );
 };
 
-export { StepOne };
+export default StepOne;

@@ -46,7 +46,15 @@ const useForm = () => {
     localStorage.removeItem("formData");
   };
 
-  return { step, formData, saveData, nextStep, prevStep, resetForm };
+  return {
+    step,
+    formData,
+    saveData,
+    nextStep,
+    prevStep,
+    resetForm,
+    setFormData,
+  };
 };
 
 export default useForm;
