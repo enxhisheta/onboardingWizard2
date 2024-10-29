@@ -1,11 +1,11 @@
-import useForm from "../hooks/use-Forms";
+import useForm from "../hooks/use-forms";
 
 const FormInfo = () => {
   const { formData, resetForm } = useForm();
   return (
     <>
       <div>
-        <h2>Form Info</h2>
+        <h1>Form Info</h1>
         <p>Name: {formData.name}</p>
         <p>Surname: {formData.surname}</p>
         <p>Age: {formData.age}</p>

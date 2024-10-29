@@ -1,4 +1,4 @@
-import useForm from "../hooks/use-Forms";
+import useForm from "../hooks/use-forms";
 import StepOne from "../components/StepOne";
 import StepTwo from "../components/StepTwo";
 import StepThree from "../components/StepThree";
@@ -9,15 +9,13 @@ const MultiStepForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const newData = { [name]: value };
     setFormData({ ...formData, [name]: value });
-    saveData(newData);
-    console.log(formData);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (step < 2) {
+    saveData(formData);
+    if (step < 3) {
       nextStep();
     } else {
       console.log("Form submitted:", formData);
@@ -29,22 +27,22 @@ const MultiStepForm = () => {
     <div id="root">
       <h1>Multi-Step Form</h1>
       <form onSubmit={handleSubmit} className="form">
-        {step === 0 && (
+        {step === 1 && (
           <StepOne formData={formData} handleChange={handleChange} />
         )}
-        {step === 1 && (
+        {step === 2 && (
           <StepTwo formData={formData} handleChange={handleChange} />
         )}
-        {step === 2 && (
+        {step === 3 && (
           <StepThree formData={formData} handleChange={handleChange} />
         )}
         <div>
-          {step > 0 && (
+          {step > 1 && (
             <button type="button" onClick={prevStep}>
               Back
             </button>
           )}
-          <button type="submit">{step === 2 ? "Submit" : "Next"}</button>
+          <button type="submit">{step === 3 ? "Submit" : "Next"}</button>
         </div>
       </form>
     </div>

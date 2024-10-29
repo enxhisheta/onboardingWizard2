@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useForm = () => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
@@ -31,10 +31,10 @@ const useForm = () => {
     });
   };
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 2));
-  const prevStep = () => setStep((prev) => Math.max(prev - 1, 0));
+  const nextStep = () => setStep((prev) => Math.min(prev + 1, 3));
+  const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
   const resetForm = () => {
-    setStep(0);
+    setStep(1);
     setFormData({
       name: "",
       surname: "",
