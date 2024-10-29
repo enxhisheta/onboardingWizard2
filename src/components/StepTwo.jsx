@@ -3,7 +3,7 @@
 const StepTwo = ({ formData, handleChange }) => {
   return (
     <>
-      <h1>Step 2: Age and Gender</h1>
+      <h2>Step 2: Age and Gender</h2>
       <label>
         Age:
         <input
