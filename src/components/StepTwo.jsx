@@ -31,4 +31,4 @@ const StepTwo = ({ formData, handleChange }) => {
   );
 };
 
-export default StepTwo;
+export { StepTwo };

@@ -1,7 +1,7 @@
 import useForm from "../hooks/use-Forms";
-import StepOne from "./StepOne.jsx";
-import StepTwo from "./StepTwo";
-import StepThree from "./StepThree";
+import { StepOne } from "./StepOne";
+import { StepTwo } from "./StepTwo";
+import { StepThree } from "./StepThree";
 
 const MultiStepForm = () => {
   const { step, formData, saveData, nextStep, prevStep, resetForm } = useForm();
@@ -23,6 +23,7 @@ const MultiStepForm = () => {
 
   return (
     <div id="root">
+      <h1>Multi-Step Form</h1>
       <form onSubmit={handleSubmit} className="form">
         {step === 0 && (
           <StepOne formData={formData} handleChange={handleChange} />
@@ -46,4 +47,4 @@ const MultiStepForm = () => {
   );
 };
 
-export default MultiStepForm;
+export { MultiStepForm };

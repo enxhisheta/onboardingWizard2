@@ -3,7 +3,7 @@
 const StepOne = ({ formData, handleChange }) => {
   return (
     <>
-      <h1>Step 1: Personal Information</h1>
+      <h2>Step 1: Personal Information</h2>
       <label>
         Name:
         <input
@@ -28,4 +28,4 @@ const StepOne = ({ formData, handleChange }) => {
   );
 };
 
-export default StepOne;
+export { StepOne };
